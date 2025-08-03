@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRISHI'S HACKING SOFTWARE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ffcc;
+      background-image: url('https://i.pinimg.com/originals/5f/c8/e6/5fc8e63c7d0db31e5089d76e56b08eeb.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: brightness(0.5);
+      text-shadow: 0 0 8px #00ffff;
+    }h1 {
+  font-size: 3em;
+  margin-bottom: 40px;
+}
+
+.hack-option {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+  padding: 20px 40px;
+  margin: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.hack-option:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 255, 204, 0.2);
+}
+
+#terminal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: #00ffcc;
+  font-size: 1.2em;
+  padding: 20px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+  </style>
+</head>
+<body>
+  <h1>HRISHI'S HACKING SOFTWARE</h1>
+  <div class="hack-option" onclick="simulateHack('TV Hack')">TV Hack</div>
+  <div class="hack-option" onclick="simulateHack('Security Camera Hack')">Security Camera Hack</div>
+  <div class="hack-option" onclick="simulateHack('IP Address Hack')">IP Address Hack</div>  <div id="terminal"></div><audio id="alertSound" src="https://www.myinstants.com/media/sounds/windows-xp-error.mp3"></audio>
+
+  <script>
+    function simulateHack(option) {
+      const terminal = document.getElementById("terminal");
+      terminal.style.display = "block";
+      terminal.innerText = `> Initializing ${option}...\n`;
+      let steps = [
+        "Establishing connection...",
+        "Bypassing firewall...",
+        "Injecting payload...",
+        "Access denied! UNAUTHORIZED ACCESS DETECTED",
+        "Aborting operation...",
+        "System lockdown engaged."
+      ];
+
+      let i = 0;
+      let interval = setInterval(() => {
+        if (i < steps.length) {
+          terminal.innerText += `\n> ${steps[i]}`;
+          document.getElementById("alertSound").play();
+          i++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            alert("❌ Access Denied: You do not have permission to perform this hack.");
+            terminal.style.display = "none";
+          }, 1000);
+        }
+      }, 1200);
+    }
+  </script></body>
+</html>
